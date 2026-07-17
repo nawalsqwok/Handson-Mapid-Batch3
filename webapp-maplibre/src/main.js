@@ -1,4 +1,4 @@
-import { Map } from 'maplibre-gl';
+import { Map, FullscreenControl, GlobeControl, LogoControl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { addKotaLayer } from './layers/vektor';
 import { addPulauLayer } from './layers/vektor';
@@ -29,3 +29,6 @@ map.on("load",() => {
 // ---- control setting
 
 addAttribution(map, "Natural Earth, Pemrpov Jawa Barat");
+map.addControl(new FullscreenControl());
+map.addControl(new GlobeControl());
+map.addControl(new LogoControl({compact: false}))
