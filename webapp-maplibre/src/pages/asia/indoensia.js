@@ -1,5 +1,8 @@
 import { Map } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css'
 import { addKotaLayer, addPulauLayer } from '../../layers/vektor';
+import { addAttribution } from '../../controls/basicControls';
+
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -11,11 +14,17 @@ const map = new Map({
     style: 'https://demotiles.maplibre.org/globe.json',
     center: [107.66, -7.14],
     zoom: 1,
+    attributionControl: false
 });
 
-map.on("load",() => {
 
+
+map.on("load",() => {
+    
     addKotaLayer(map);
     addPulauLayer(map);
 })
 
+// ---- control setting
+
+addAttribution(map, "Natural Earth");

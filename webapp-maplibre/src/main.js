@@ -1,8 +1,9 @@
 import { Map } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css'
 import { addKotaLayer } from './layers/vektor';
 import { addPulauLayer } from './layers/vektor';
 import { addGedungsateImage } from './layers/raster';
-
+import { addAttribution } from './controls/basicControls';
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -17,12 +18,14 @@ const map = new Map({
     attributionControl: false
 });
 
-map.on("load",() => {
 
+map.on("load",() => {
+    
     addKotaLayer(map);
     addPulauLayer(map);
     addGedungsateImage(map)
 });
 
-// ---- contorl setting
+// ---- control setting
 
+addAttribution(map, "Natural Earth, Pemrpov Jawa Barat");
