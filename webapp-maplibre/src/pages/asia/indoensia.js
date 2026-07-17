@@ -1,5 +1,5 @@
 import { Map } from 'maplibre-gl';
-import { addKotaLayer, addPulauLayer } from './vektor';
+import { addKotaLayer, addPulauLayer } from '../../layers/vektor';
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -18,3 +18,4 @@ map.on("load",() => {
     addKotaLayer(map);
     addPulauLayer(map);
 })
+
