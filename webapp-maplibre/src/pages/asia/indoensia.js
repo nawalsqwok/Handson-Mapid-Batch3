@@ -2,6 +2,7 @@ import { Map } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { addKotaLayer, addPulauLayer } from '../../layers/vektor';
 import { addAttribution } from '../../controls/basicControls';
+import { LogoJabarControl } from '../../controls/customLogoControl';
 
 
 const mapElement = document.createElement('div');
@@ -28,3 +29,4 @@ map.on("load",() => {
 // ---- control setting
 
 addAttribution(map, "Natural Earth");
+map.addControl(new LogoJabarControl(), "top-left")

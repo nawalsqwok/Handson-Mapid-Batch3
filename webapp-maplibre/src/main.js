@@ -4,6 +4,7 @@ import { addKotaLayer } from './layers/vektor';
 import { addPulauLayer } from './layers/vektor';
 import { addGedungsateImage } from './layers/raster';
 import { addAttribution } from './controls/basicControls';
+import { LogoJabarControl } from './controls/customLogoControl'
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -31,4 +32,5 @@ map.on("load",() => {
 addAttribution(map, "Natural Earth, Pemrpov Jawa Barat");
 map.addControl(new FullscreenControl());
 map.addControl(new GlobeControl());
-map.addControl(new LogoControl({compact: false}))
+map.addControl(new LogoControl({compact: false}));
+map.addControl(new LogoJabarControl(), 'top-left')
