@@ -1,10 +1,15 @@
-import { Map, FullscreenControl, GlobeControl, LogoControl } from 'maplibre-gl';
+import { 
+    Map, 
+    FullscreenControl, 
+    GlobeControl, 
+    LogoControl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { addKotaLayer } from './layers/vektor';
 import { addPulauLayer } from './layers/vektor';
 import { addGedungsateImage } from './layers/raster';
 import { addAttribution } from './controls/basicControls';
-import { LogoJabarControl } from './controls/customLogoControl'
+import { LogoJabarControl } from './controls/customLogoControl';
+import { addKotaPopup } from './popups/layerPopups';
 
 const mapElement = document.createElement('div');
 mapElement.id = 'map';
@@ -26,6 +31,12 @@ map.on("load",() => {
     addPulauLayer(map);
     addGedungsateImage(map)
 });
+
+map.on("click", "titik-kota", function(event){
+    addKotaPopup(map, event)
+})
+
+// addKotaPopup(map);
 
 // ---- control setting
 
