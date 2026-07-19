@@ -12,7 +12,7 @@ document.body.appendChild(mapElement);
 
 const map = new Map({
     container: 'map',
-    style: 'https://demotiles.maplibre.org/globe.json',
+    style: 'https://basemap.mapid.io/styles/dark/style.json?key=6a15c3949b6fba880a625159',
     center: [107.66, -7.14],
     zoom: 1,
     attributionControl: false
