@@ -9,7 +9,7 @@ import { addPulauLayer } from './layers/vektor';
 import { addGedungsateImage } from './layers/raster';
 import { addAttribution } from './controls/basicControls';
 import { LogoJabarControl } from './controls/customLogoControl';
-import { addKotaPopup } from './popups/layerPopups';
+import { addKotaPopup, addPulauPopup } from './popups/layerPopups';
 import { storeAreaGeometry } from './engine/areaTool';
 
 const mapElement = document.createElement('div');
@@ -41,6 +41,7 @@ map.on("click", "titik-kota", function(event){
 map.doubleClickZoom.disable();
 
 map.on("click", "area-pulau", function(event){
+    addPulauPopup(map, event)
     storeAreaGeometry(event)
 })
 

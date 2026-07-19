@@ -23,6 +23,17 @@ export function addKotaPopup(map, event){
         .addTo(map)
 }
 
+export function addPulauPopup(map, event){
+    return popup
+        .setLngLat(event.lngLat)
+        .setHTML(`
+            <div>
+                <div id="luas"></div>
+            </div>
+            `)
+        .addTo(map)
+}
+
 // popup.on('open', () => {
 //     console.log('popup was opened');
 // });

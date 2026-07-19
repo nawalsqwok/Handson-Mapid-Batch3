@@ -3,9 +3,9 @@ import { geojsonToWKT } from "@terraformer/wkt"
 export function storeAreaGeometry(event) {
     const geometry = event.features[0].geometry
     const wkt = geojsonToWKT(geometry)
-    computeArea(wkt).then((value) => {
-        console.log(value)
-    })
+
+    computeArea(wkt)
+       
 }
 
 async function computeArea(wkt){
@@ -17,5 +17,7 @@ async function computeArea(wkt){
 
     const result = await response.json()
 
+    const output = document.getElementById("luas")
+    output.textContent = `${result.area_ha.toLocaleString("ID-id")} ${result.unit}`
     return result
 }
