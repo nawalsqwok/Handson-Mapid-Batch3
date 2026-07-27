@@ -6,7 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL("index.html", import.meta.url)),
-        indonesia: fileURLToPath(new URL("asia/indonesia.html", import.meta.url)),
+        indonesia: fileURLToPath(new URL("asia/Indonesia.html", import.meta.url)),
       },
     },
   },
